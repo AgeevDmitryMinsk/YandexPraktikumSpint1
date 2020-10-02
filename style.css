@@ -1,0 +1,126 @@
+.header {
+    display:flex; /*Сделайте блок header флекс-контейнером*/
+    height: 95px; /*Задайте блоку с классом header высоту 95 пикселей.*/
+}
+
+.menu {
+    display: flex;   /*Сделайте меню флекс-контейнером. */             
+    justify-content: center;  /*Затем задайте ему свойство justify-content со значением center.*/
+    min-height: 75px; /*Задайте меню минимальную высоту 75 пикселей. Обратите внимание: свойство justify-content 
+                        отцентровало элементы меню только по горизонтали. По вертикали они остались прижаты к верхней границе.
+                        Частая ошибка — задавать свойство height вместо min-height. Мы устанавливаем именно минимальную высоту, 
+                        чтобы контейнер растягивался, когда ссылки встанут в колонку: например, на телефоне.
+                        Запомните этот приём с min-height. Прежде чем установить элементу фиксированную высоту, 
+                        задайте себе вопрос: «Что если контента станет больше?».*/
+    align-items:center; /*Добавьте элементу с классом menu свойство align-items со значением center
+                        Теперь элементы выравнены и по вертикали и по горизонтали по центру*/
+  }
+  
+
+.flex-row {         /*Превратите элемент с классом flex-row во флекс-контейнер. Затем поменяйте мышкой размеры окна просмотра.
+                    Изображения растягиваются и сжимаются, адаптируясь к новым условиям. Они продолжают заполнять собой весь флекс-контейнер.*/
+    display:flex;
+    justify-content: space-around; /*Пустое пространство перед первым и после последнего элементов равно половине пространства между двумя соседними элементами*/
+}
+
+div { /* будущий флекс-контейнер, задайте ему контур. Для этого установите всем блокам div рамку в 1 пиксель, сплошную, красного цвета.*/
+    border: 1px solid red;
+}
+
+.header {
+    display:flex;
+    height: 95px; /*Задайте блоку с классом header высоту 95 пикселей.*/
+}
+
+.header-link { /* ссылку с классом header-link выровняйте по центру этого контейнера. Для этого задайте ей поля выражением margin: auto;*/
+    margin: auto;
+}
+
+.project {
+    background: center; /*установите позицию фона в центре по горизонтали и вертикали;*/
+    background-size: cover; /* установите такой размер изображения, чтобы покрывало весь блок.*/
+}
+
+.project_beginner {
+    width: 636px;
+ height:430px;
+ }
+
+ .project_music-album {
+     /* зададим фон: */
+     background-image: url(https://code.s3.yandex.net/web-code/album.png);
+ }
+
+ .project_design-principles {
+     background-image: url(https://code.s3.yandex.net/web-code/design.png);
+ }
+
+ .flex-column {
+     /*Сделайте элемент с классом flex-column флекс-контейнером.*/
+     display: flex;
+     width: 636px;
+     height: 557px;
+     justify-content: space-between;
+ }
+
+ .project_procrastinate {
+     width: 636px;
+     height: 557px;
+ }
+
+ .project-video {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     /*Свойство object-fit подстроит элемент под размер так, чтобы он закрывал определенную площадь.
+                         Её задают параметрами width и height. Их нужно указать явно, в нашем случае — это 100% ширины и высоты родителя.*/
+ }
+
+ .project_p5 {
+     width: 636px;
+     height: 240px;
+ }
+
+ .flex-row_frameworks-inner {
+     width: 636px;
+     height: 290px;
+ }
+
+ .project_slider {
+     background-image: url(https://code.s3.yandex.net/web-code/slider.gif);
+     width: 306px;
+     height: 290px;
+ }
+
+ .project_reactive {
+     background-image: url(https://code.s3.yandex.net/web-code/reactive.gif);
+     width: 306px;
+     height: 290px;
+ }
+
+ .flex-row_reversed {
+     /*для этого класса CSS-правило, которое разместит элементы в строке в противоположном направлении.*/
+     flex-direction: row-reverse;
+ }
+
+ .flex-column_reversed {
+     flex-direction: column-reverse;
+ }
+
+ .project_vanilla {
+     width: 306px;
+     height: 290px;
+ }
+
+ .project_how-to-study {
+     /*Каждому классу определите свойство background-image. Всавьте ссылки на фоновые изображения для каждого блока*/
+    background-image: url(https://code.s3.yandex.net/web-code/how-to-study.png);
+  }
+  
+  .project_across-russia {
+     background-image: url(https://code.s3.yandex.net/web-code/across-russia.png);
+  }
+  
+  .project_mesto {
+    background-image: url(https://code.s3.yandex.net/web-code/mesto.png);
+  }
