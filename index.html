@@ -1,115 +1,200 @@
 <!DOCTYPE html>
-<html lang="ru">  <!-- код, который сообщит браузеру, что весь HTML-документ написан на русском языке.-->
+<html lang="ru">
+<!-- код, который сообщит браузеру, что весь HTML-документ написан на русском языке.-->
+
 <head>
-  <meta charset="UTF-8"> <!--определяет кодировку страницы-->
-  <meta name="viewport" content="width=device-width, initial-scale=1">  <!--
+  <meta charset="UTF-8">
+  <!--определяет кодировку страницы-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--
     Значение viewport сообщает браузеру, как выглядит видимая пользователю область страницы. 
     Если этот метатег не указывать, сайт может отображаться по-разному на разных устройствах. 
     Где-то всё будет работать хорошо, а где-то — нет. Поэтому лучше всегда прописывать этот метатег.
     width=device-width означает «занимать всю ширину экрана»,
     initial-scale=1 означает, что страница на любом устройстве должна отображаться в масштабе 1:1, то есть не масштабироваться при загрузке.
   -->
-  <meta name="description" content="Страница-портфолио Агеева Дмитрия на сайте Яндекс.Практикум"> <!--Описание контента прописывают в метатеге description-->
-  <meta name="keywords" content="HTML5, CSS"> <!--метатег keywords — в нём прописывают ключевые слова сайта.-->
-  <meta name="author" content="Агеев Дмитрий"> <!--Автора или авторов сайта указывают в метатегах author, 
+  <meta name="description" content="Страница-портфолио Агеева Дмитрия на сайте Яндекс.Практикум">
+  <!--Описание контента прописывают в метатеге description-->
+  <meta name="keywords" content="HTML5, CSS">
+  <!--метатег keywords — в нём прописывают ключевые слова сайта.-->
+  <meta name="author" content="Агеев Дмитрий">
+  <!--Автора или авторов сайта указывают в метатегах author, 
                                                 в один метатег meta name="author" вписывается имя одного автора.-->
   <link rel="shortcut icon" href="favicon.ico"> <!-- задаёт изображение во вкладке браузера-->
-  <link rel="stylesheet" href="https://code.s3.yandex.net/web-code/normalize.css"> <!-- делает нормализацию CSS для разных браузеров-->
+  <link rel="stylesheet" href="https://code.s3.yandex.net/web-code/normalize.css">
+  <!-- делает нормализацию CSS для разных браузеров-->
   <link rel="stylesheet" href="style.css">
-  <title>Портфолио</title> <!--задаёт имя во вкладке браузера;-->
+  <title>Портфолио</title>
+  <!--задаёт имя во вкладке браузера;-->
 </head>
 
-<body class="page"> <!--БЭМ резко против использования селектора тегов. Поэтому создайте из всего body страницы блок с именем "page"-->
-  <header class="header">
+<body class="page">
+  <!--БЭМ резко против использования селектора тегов. Поэтому создайте из всего body страницы блок с именем "page"-->
+  <header class="header centered-block">
     <!-- Заготовим HTML-элементы, которым предстоит стать флекс-контейнером и флекс-элементом.
                         Создайте блок div с классом header. Внутри него расположите
                         ссылку Яндекс Практикум, ведущую по адресу #. Дайте ей класс header-link.
                         Переименуем блок div на блок с названием header-->
-    <a href="#" lang="en" class="header__link">Ageev Dmitry Portfolio</a>  <!-- Тегу ссылки link добавьте атрибут lang="en".
-                                                                      Переименуем класс header-link в класс header__link по БЭМ-->
+    <!--Опишите правило margin: auto; для блока centered-block. А затем примешайте этот класс ко всем блокам и 
+                          элементам, которые должны быть выровнены по центру: header, menu, content, footer и элементу header__link.
+                        таким образом сделаем микс из двух блоков header и centered-block-->
+    <h1 class="centered-block"><a href="#" lang="en" class="header__link">Ageev Dmitry Portfolio</a> </h1>
+    
+    <!-- Тегу ссылки link добавьте атрибут lang="en". Переименуем класс header-link в класс header__link по БЭМ-->
+    <!--На странице теперь целых три заголовка второго уровня и ни одного заголовка первого. Это не по правилам семантики. Сделаем заголовком ссылку в шапке.
+     Оберните ссылку в теги <h1></h1> и назначьте заголовку класс centered-block. Именно заголовок должен быть выровнен по центру, а не ссылка внутри него. 
+     
+     Поэтому из ссылки удалите класс centered-block.-->
   </header>
 
-  <nav class="menu">
+  <nav class="menu centered-block page__menu">
     <!--Прямо под класссом header создайте div с классом menu. В этот div положите 3 ссылки с классом menu-link. 
                     Задайте каждой ссылке атрибут href со значением #.     Вот тексты ссылок:    
                     Первые шаги в HTML и CSS    Библиотеки JavaScript   Практика HTML, CSS и JavaScript
                     Переименуем блок div на блок с названием nav- -->
-    <a href="#" class="menu__link menu__link_active">Первые шаги в HTML и CSS</a> <!--Переименуем класс menu-link в класс menu__link по БЭМ-->
-                                                        <!--Начнём с простого булевого модификатора: menu__link_active.
-                                                        Первую ссылку menu__link сделайте подчёркнутой. Для этого добавьте 
-                                                        в HTML класс модификатора active и назначьте ему подчёркивание в CSS.-->
-    <a href="#" class="menu__link">Библиотеки JavaScript</a>
-    <a href="#" class="menu__link">Практика HTML, CSS и JavaScript</a>
+    <!--Опишите правило margin: auto; для блока centered-block. А затем примешайте этот класс ко всем блокам и 
+                    элементам, которые должны быть выровнены по центру: header, menu, content, footer и элементу header__link.
+                    таким образом сделаем микс из двух блоков menu и centered-block-->
+    <!--Наше меню — потомок блока page. Это значит, что мы можем использовать микс: сделать меню одновременно блоком и 
+                    элементом. Добавьте блоку menu класс page__menu и опишите CSS-правило margin: 40px auto; для этого класса.-->
+
+    <a href="#beginner" class="menu__link menu__link_active">Первые шаги в HTML и CSS</a>
+                                      <!--Переименуем класс menu-link в класс menu__link по БЭМ-->
+                                      <!--Начнём с простого булевого модификатора: menu__link_active.
+                                      Первую ссылку menu__link сделайте подчёркнутой. Для этого добавьте 
+                                      в HTML класс модификатора active и назначьте ему подчёркивание в CSS.-->
+                                      <!--В блоке menu каждый элемент с классом menu__link сделайте якорной ссылкой на соответствующий блок. 
+                                      Первый — на блок с идентификатором beginner, второй — frameworks, третий — practice.-->
+    <a href="#frameworks" class="menu__link">Библиотеки JavaScript</a>
+                                      <!--В блоке menu каждый элемент с классом menu__link сделайте якорной ссылкой на соответствующий блок. 
+                                      Первый — на блок с идентификатором beginner, второй — frameworks, третий — practice.-->
+    <a href="#practice" class="menu__link">Практика HTML, CSS и JavaScript</a>
+    <!--если нажать на нужную ссылку, то попадешь на нужную секцию. Для этого нужны идентификаторы id-->
   </nav>
 
-  <main class="content"> <!--Переименуем тег div на тег с названием main, 
+  <main class="content centered-block">
+    <!--Переименуем тег div на тег с названием main, 
                             а блок-класс "main", который не описывает своего содержания переименуйте в "content"- -->
 
-    <ul class="flex-row list"> <!--Переименуем блок div на блок с названием section, затем section заменим на ul, тк по смыслу это списки-->
-      <!-- Создайте блок div с классом flex-row (дословно — «гибкий ряд»).
+    <section id="beginner"> <!--Присвойте каждому тегу section (каждой секции) на странице идентификаторы beginner, frameworks и practice соответственно.-->
+                            <!--В блоке menu каждый элемент с классом menu__link сделайте якорной ссылкой на соответствующий блок. 
+                            Первый — на блок с идентификатором beginner, второй — frameworks, третий — practice.-->
+      <h2 class="content content__title">Первые шаги в HTML и CSS</h2>
+      <!--Пока непонятно, что содержит в себе каждая флекс-строка. Чтобы это исправить, добавим 
+    строкам подзаголовки. Но если установить их внутри флекс-контейнера, подзаголовки станут флекс-элементом и расположатся в линию.
+    К тому же, размещать заголовки внутри блока списка семантически некорректно. Правильнее создать обёртки тегом section. 
+    Именно секциями размечают озаглавленные зоны.-->
+
+      <ul class="flex-row list flex-row_space_bottom">
+        <!--Переименуем блок div на блок с названием section, затем section заменим на ul, тк по смыслу это списки-->
+        <!-- Создайте блок div с классом flex-row (дословно — «гибкий ряд»).
                         внутри этого блока создайте два элемента. Каждому присвойте два класса: project и project_beginner.
                         Затем первому блоку присвойте дополнительный класс project_music-album, второму —
                         project_design-principles.-->
-      <li class="project project_beginner project_music-album project_width_l project_height_l"></li> <!-- Переименуем блок div на блок с названием li, те элемент списка ul -->
-      <li class="project project_beginner project_design-principles project_width_l project_height_l"></li>
-    </ul>
-    <section class="flex-row flex-row_reversed list">  <!--Под блоком с классом flex-row создайте еще один блок div. Назначьте ему тот же класс.
+        <!--Сделайте микс из flex-row. Создайте модификатор с ключом space и значением bottom: .flex-row_space_bottom 
+                          Добавьте эти модификаторы первым двум строкам flex-row.-->
+        <li class="project project_name_music-album project_width_l project_height_l">
+          <a href="#" class="project__overlay">обложка музыкального альбома</a>
+        </li>
+        <!-- Переименуем блок div на блок с названием li, те элемент списка ul -->
+        <!--Создадим ссылку, которая работает при наведении на карточку проекта. Пока мы можем сделать красивый блок наведения только в тех карточках, 
+          где изображение лежит на фоне. В блоках с видео место под ссылку уже занято. Эту проблему мы решим в курсе о позиционировании элементов.
+        Создайте ссылку с классом project__overlay внутри каждого элемента li с классом project. Текст ссылок напишем позже, а пока стилизуем этот блок. 
+        Пока пусть ссылки ведут просто на знак #. Так часто делают, пока сайт находится в разработке.
+      Добавьте тексты ссылкам. Ориентируйтесь на модификаторы родительского блока: project_name_music-album — обложка музыкального альбома;-->
+        <li class="project project_name_design-principles project_width_l project_height_l">
+          <a href="#" class="project__overlay">посадочная страница</a>
+        </li>
+      </ul>
+    </section>
+
+    <section id="frameworks">  <!--Присвойте каждому тегу section (каждой секции) на странице идентификаторы beginner, frameworks и practice соответственно.-->
+      <h2 class="content content__title">Библиотеки JavaScript</h2> <!--Добавим заголовок Библиотеки JavaScript во вторую секцию section. -->
+      <!--Под блоком с классом flex-row создайте еще один блок div. Назначьте ему тот же класс.
                         В новый div положите два дочерних блока div. Левому блоку присвойте класс flex-column —
                         здесь покажем несколько проектов в одну колонку. 
                         и Второму блоку с классом flex-row добавьте класс flex-row_reversed.-->
-                        <!--Переименуем блок div на блок с названием section-->
-    <div class=" flex-column flex-column_reversed project_width_l">
-      <!--добавьте к классу flex-column еще класс flex-column_reversed-->
-      <div class="project project_frameworks project_p5 project_width_l project_height_s">
-        <!--В блок с классом project_p5 поместим код видео:
+      <!--Переименуем блок div на блок с названием section-->
+      <div class="flex-row flex-row_reversed flex-row_space_bottom">
+        <!--Заголовок второй флекс-строки сделать немного сложнее. Этот блок — уже секция. Но поместив в неё подзаголовок, мы сделаем его флекс-элементом.
+        Придётся делать дополнительную обёртку. Внутри секции создайте div — он станет дочерним для section, но родительским для всего вложенного в секцию контента.
+        Переместите все названия классов, которые сейчас присвоены section в новый div, а из секции эти классы удалите.-->
+
+      <div class=" flex-column flex-column_reversed">
+        <!--добавьте к классу flex-column еще класс flex-column_reversed-->
+        <div class="project project_width_l project_height_s">
+          <!--В блок с классом project_p5 поместим код видео:
                                                         Для класса project-video вы уже определили свойство object-fit
                                                         и поэтому видео красиво растянется на весь блок.-->
-        <video class="project__video" src="https://code.s3.yandex.net/web-code/like.mp4" autoplay muted loop></video>
-                            <!--переименуем класс project-video в project__video по БЭМ-->
-      </div>
-      <ul class="flex-row flex-row_frameworks-inner list project_width_l project_height_m">
-        <!--А теперь заготовим третий, самый глубокий, слой флекс-конструкции.
+          <video class="project__video" src="https://code.s3.yandex.net/web-code/like.mp4" autoplay muted loop></video>
+          <!--переименуем класс project-video в project__video по БЭМ-->
+        </div>
+        <ul class="flex-row list">
+          <!--А теперь заготовим третий, самый глубокий, слой флекс-конструкции.
             Затем div заменим на ul, тк по смыслу это списки;
             Внутри него создайте два блока div:-->
-        <li class="project project_frameworks project_slider project_width_m project_height_m"></li> <!-- Переименуем блок div на блок с названием li, те элемент списка ul -->
-        <!--вам предстоит реализовать слайдер в дипломной работе;-->
-        <li class="project project_frameworks project_reactive project_width_m project_height_m"></li>
-        <!--как овладеете JavaScript'ом, вы почувствуете, что 
+          <li class="project project_name_slider project_width_m project_height_m">
+            <a href="#" class="project__overlay">слайдер</a>
+          </li>
+          <!-- Переименуем блок div на блок с названием li, те элемент списка ul -->
+          <!--вам предстоит реализовать слайдер в дипломной работе;-->
+          <li class="project project_name_reactive project_width_m project_height_m">
+            <a href="#" class="project__overlay">React, Vue, Angular</a>
+          </li>
+          <!--как овладеете JavaScript'ом, вы почувствуете, что 
                         нужно выучить один из реактивных фреймворков — React, Vue.js, Angular или Svelte. Это будет несложно, если хорошо знать JS.-->
-      </ul>
-    </div>
-    <div class="project project_frameworks project_procrastinate project_width_l project_height_xl">
-      <!--Правому блоку задайте два класса: project и project_frameworks. Первый — project — определяет
+        </ul>
+      </div>
+      <div class="project project_width_l project_height_xl">
+        <!--Правому блоку задайте два класса: project и project_frameworks. Первый — project — определяет
         универсальные правила для всех проектов. Второй — project_frameworks — для проектов, где используются
         библиотеки JavaScript. То есть для тех четырёх, для которых мы готовим сетку сейчас.-->
-      <video class="project__video" src="https://code.s3.yandex.net/web-code/procrastinate.mov" autoplay muted
-        loop></video>
-      <!-- Для размещения видео есть тег <video>. Он похож на тег <img>, но с особенностями. 
+        <video class="project__video" src="https://code.s3.yandex.net/web-code/procrastinate.mov" autoplay muted
+          loop></video>
+        <!-- Для размещения видео есть тег <video>. Он похож на тег <img>, но с особенностями. 
                    Об этих особенностях мы подробно расскажем в теме о работе с медиафайлами.-->
-                   <!--переименуем класс project-video в project__video по БЭМ-->
+        <!--переименуем класс project-video в project__video по БЭМ-->
+      </div>
     </div>
-  </section>
-
-  <ul class="flex-row list"> <!--Переименуем блок div на блок с названием section, затем section заменим на ul, тк по смыслу это списки-->
-    <!--Подготовим блок для проектов, которые вам предстоит выполнять в ходе обучения.
+    </section>
+    <section id="practice">
+      <h2 class="content content__title">Практика HTML, CSS и JavaScript</h2>
+      <!--Пока непонятно, что содержит в себе каждая флекс-строка. Чтобы это исправить, добавим 
+      строкам подзаголовки. Но если установить их внутри флекс-контейнера, подзаголовки станут флекс-элементом и расположатся в линию.
+      К тому же, размещать заголовки внутри блока списка семантически некорректно. Правильнее создать обёртки тегом section. 
+      Именно секциями размечают озаглавленные зоны.-->
+      <ul class="flex-row list">
+        <!--Переименуем блок div на блок с названием section, затем section заменим на ul, тк по смыслу это списки-->
+        <!--Подготовим блок для проектов, которые вам предстоит выполнять в ходе обучения.
                         Перед закрывающим тегом body создайте элемент с классом flex-row. 
                         Внутри него расположите три блока div с классами project и project_vanilla.-->
-    <li class="project project_vanilla project_how-to-study project_width_m project_height_m"></li> <!-- Переименуем блок div на блок с названием li, те элемент списка ul -->
-    <!--Класс project_vanilla называется так потому, что “vanilla“ — это 
+        <li class="project project_name_how-to-study project_width_m project_height_m">
+          <a href="#" class="project__overlay">CSS-анимации</a>
+        </li>
+        <!-- Переименуем блок div на блок с названием li, те элемент списка ul -->
+        <!--Класс project_vanilla называется так потому, что “vanilla“ — это 
                                                 сленговое название «чистого» языка программирования.
                                               Присвойте каждому div с классом project_vanilla ещё по одному классу: первому — project_how-to-study;-->
-    <li class="project project_vanilla project_across-russia project_width_l project_height_m"></li> <!-- project_width_m--> 
-    <!-- второму к классам project и project_vanilla еще один класс - project_across-russia;-->
-    <li class="project project_vanilla project_mesto project_width_m project_height_m"></li>
-    <!--третьему — project_mesto-->
-  </ul>
-
+        <li class="project project_name_across-russia project_width_l project_height_m">
+          <a href="#" class="project__overlay">адаптивная вёрстка</a>
+        </li>
+        <!-- project_width_m-->
+        <!-- второму к классам project и project_vanilla еще один класс - project_across-russia;-->
+        <li class="project project_name_mesto project_width_m project_height_m">
+          <a href="#" class="project__overlay">приложение на JavaScript</a>
+        </li>
+        <!--третьему — project_mesto-->
+      </ul>
+    </section>
   </main>
 
-  <footer class="footer">
+  <footer class="footer centered-block">
     <!-- Перед закрывающимся body создайте блок div с классом footer. 
                       Это «подвал» сайта. В нём мы будем выравнивать отдельный элемент внутри флекс-контейнера.
                     Переименуем блок с названием div в блок с названием footer-->
+    <!--Опишите правило margin: auto; для блока centered-block. А затем примешайте этот класс ко всем блокам и 
+                          элементам, которые должны быть выровнены по центру: header, menu, content, footer и элементу header__link.
+                        таким образом сделаем микс из двух блоков footer и centered-block-->
 
     <div class="footer__logo "></div>
     <!--Создайте внутри footer дочерний div с классом logo.-->

@@ -12,7 +12,7 @@
     /*А сейчас вернём макет в менее адаптивный, но более привлекательный вид.*/
     max-width: 1330px;
     min-width: 1280px;
-    margin: auto;
+    /*margin: auto;  выравнивает по центру - перернес margin из .header в правило .centered-blok*/
 }
 
 .menu {
@@ -38,15 +38,24 @@
     max-width: 1330px;
     /*А сейчас вернём макет в менее адаптивный, но более привлекательный вид.*/
     min-width: 1280px;
-    margin: 60px auto;
-    /*Добавим внешние отступы сверху и снизу по 40px */
+    /*margin: 40px auto;  /*Добавим внешние отступы сверху и снизу по 40px */
+    /*перернес margin из .menu в правило .page__menu {  margin: 40px auto;}*/
 }
 
 .content {
     /* А сейчас вернём макет в менее адаптивный, но более привлекательный вид.*/
     max-width: 1330px;
     min-width: 1280px;
-    margin: auto;
+    /*margin: auto;  выравнивает по центру - перернес margin из .content  в правило .centered-blok*/
+}
+
+.content__title { /*Мы не задавали стилей для заголовков, поэтому их внешний вид определён файлом normalize.css. У заголовков есть отступы, 
+                    унаследованные от стилей браузера, его размеры нами не описаны. 
+                    Заголовки лучше стилизовать. Сделайте каждый заголовок второго уровня элементом блока content, назначив класс content__title.
+                    После этого пропишите селектору этого класса стили:*/
+    font-size: 34px;
+    margin: 0 0 40px;
+    text-align: center; 
 }
 
 .flex-row {
@@ -83,8 +92,9 @@
 }*/
 
 .header__link {
-    margin: auto;
+    /*margin: auto;*/
     /* ссылку с классом header-link выровняйте по центру этого контейнера. Для этого задайте ей поля выражением margin: auto;*/
+    /*margin: auto;  выравнивает по центру - перернес margin из .header_link в правило .centered-blok*/
     font-size: 28px;
     /*размер шрифта */
     text-decoration: none;
@@ -116,6 +126,27 @@
     /*установите позицию фона в центре по горизонтали и вертикали;*/
     background-size: cover;
     /* установите такой размер изображения, чтобы покрывало весь блок.*/
+}
+
+.project__overlay {
+    background-color: rgba(0, 0, 100, .8);
+    height: 100%;
+    width: 100%; /* растянули ссылку во весь блок */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* выровняли текст по центру средствами flex */
+    text-decoration: none; /* убрали подчеркивание  */
+    color: white;
+    text-transform: uppercase;
+    font-size: 30px;
+    text-align: center;
+    box-sizing: border-box; /* задали внутренний фокус элемента, чтобы контейнер не расширялся */
+    padding: 20px; /* отступ, чтобы текст не касался краёв */
+    opacity: 0; /*блок при наведении полностью прозрачен*/
+}
+
+.project__overlay:hover {
+    opacity: 1; /*блок при наведении полностью НЕпрозрачен(!)*/
 }
 
 .project_beginner {
@@ -151,12 +182,12 @@
     height: 240px;
 }
 
-.project_music-album {
+.project_name_music-album {
     /* зададим фон: */
     background-image: url(https://code.s3.yandex.net/web-code/album.png);
 }
 
-.project_design-principles {
+.project_name_design-principles {
     background-image: url(https://code.s3.yandex.net/web-code/design.png);
 }
 
@@ -191,13 +222,13 @@
     /* height: 290px; - - перенос в модификатор project_height_m */
 }
 
-.project_slider {
+.project_name_slider {
     background-image: url(https://code.s3.yandex.net/web-code/slider.gif);
     /*width: 306px; - перенес в модификатор .project_width_m*/
     /*height: 290px; - перенос в модификатор project_height_m */
 }
 
-.project_reactive {
+.project_name_reactive {
     background-image: url(https://code.s3.yandex.net/web-code/reactive.gif);
     /*width: 306px; - перенес в модификатор .project_width_m*/
     /*height: 290px; - - перенос в модификатор project_height_m */
@@ -206,20 +237,30 @@
 .flex-row_reversed {
     /*для этого класса CSS-правило, которое разместит элементы в строке в противоположном направлении.*/
     flex-direction: row-reverse;
-    margin: 60px auto;
+    /*margin: 60px auto; - перенос в модификатор flex-row_space_bottom*/
     /*Добавим внешние отступы сверху и снизу по 60px */
 }
+
+
+.flex-row_space_bottom {
+    margin-bottom: 60px;
+    /*Сделайте микс из flex-row. Создайте модификатор с ключом space и значением bottom. Добавьте эти модификаторы первым двум строкам flex-row.*/
+    /*Добавим внешние отступы сверху и снизу по 60px */
+}
+
+
 
 .flex-column_reversed {
     flex-direction: column-reverse;
 }
+
 
 .project_vanilla {
     /*width: 306px; - перенес в модификатор .project_width_m*/
     /* height: 290px; - перенос в модификатор project_height_m */
 }
 
-.project_how-to-study {
+.project_name_how-to-study {
     /*Каждому классу определите свойство background-image. Всавьте ссылки на фоновые изображения для каждого блока*/
     background-image: url(https://code.s3.yandex.net/web-code/how-to-study.png);
 
@@ -228,14 +269,14 @@
     order: 3;
 }
 
-.project_across-russia {
+.project_name_across-russia {
     background-image: url(https://code.s3.yandex.net/web-code/across-russia.png);
     order: 2;
     /*flex-basis: 636px;
     /*ширина блока изменилась от 100 до 636px относитьно соседних двух контейнеров*/
 }
 
-.project_mesto {
+.project_name_mesto {
     background-image: url(https://code.s3.yandex.net/web-code/mesto.png);
     order: 1;
     /* свойство order меняет местами классы, сейчас последний класс на экране стал первым */
@@ -250,7 +291,7 @@
     max-width: 1330px;
     /*А сейчас вернём макет в менее адаптивный, но более привлекательный вид.*/
     min-width: 1280px;
-    margin: auto;
+    /*margin: auto;  выравнивает по центру - перернес margin из .footer в правило .centered-blok*/
 }
 
 
@@ -269,4 +310,16 @@
     /*Выровняем элемент  по центру и по вертикали - это третий способ.
                         есть еще способ центрирования: margin: auto; и еще один: justify-content: center;*/
     ;
+}
+
+.centered-block {
+    margin: auto;
+    /*Опишите правило margin: auto; для блока centered-block. А затем примешайте этот класс ко всем блокам и 
+      элементам, которые должны быть выровнены по центру: header, menu, content, footer и элементу header__link.
+      таким образом сделаем микс из двух блоков menu и centered-block*/
+}
+
+.page__menu {
+    margin: 40px auto;
+    /*Добавим внешние отступы сверху и снизу по 40px */
 }
