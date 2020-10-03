@@ -46,12 +46,9 @@
                             а блок-класс "main", который не описывает своего содержания переименуйте в "content"- -->
 
     <ul class="flex-row list"> <!--Переименуем блок div на блок с названием section, затем section заменим на ul, тк по смыслу это списки-->
-      <!-- Создайте блок div с классом flex-row (дословно — «гибкий ряд»).
-                        внутри этого блока создайте два элемента. Каждому присвойте два класса: project и project_beginner.
-                        Затем первому блоку присвойте дополнительный класс project_music-album, второму —
-                        project_design-principles.-->
-      <li class="project project_beginner project_music-album project_width_l project_height_l"></li> <!-- Переименуем блок div на блок с названием li, те элемент списка ul -->
-      <li class="project project_beginner project_design-principles project_width_l project_height_l"></li>
+      
+      <li class="project project_name_music-album project_width_l project_height_l"></li> <!-- Переименуем блок div на блок с названием li, те элемент списка ul -->
+      <li class="project project_name_design-principles project_width_l project_height_l"></li>
     </ul>
     <section class="flex-row flex-row_reversed list">  <!--Под блоком с классом flex-row создайте еще один блок div. Назначьте ему тот же класс.
                         В новый div положите два дочерних блока div. Левому блоку присвойте класс flex-column —
@@ -60,28 +57,24 @@
                         <!--Переименуем блок div на блок с названием section-->
     <div class=" flex-column flex-column_reversed project_width_l">
       <!--добавьте к классу flex-column еще класс flex-column_reversed-->
-      <div class="project project_frameworks project_p5 project_width_l project_height_s">
-        <!--В блок с классом project_p5 поместим код видео:
-                                                        Для класса project-video вы уже определили свойство object-fit
-                                                        и поэтому видео красиво растянется на весь блок.-->
+      <div class="project  project_width_l project_height_s">
+       
         <video class="project__video" src="https://code.s3.yandex.net/web-code/like.mp4" autoplay muted loop></video>
                             <!--переименуем класс project-video в project__video по БЭМ-->
       </div>
-      <ul class="flex-row flex-row_frameworks-inner list project_width_l project_height_m">
+      <ul class="flex-row list project_width_l project_height_m">
         <!--А теперь заготовим третий, самый глубокий, слой флекс-конструкции.
             Затем div заменим на ul, тк по смыслу это списки;
             Внутри него создайте два блока div:-->
-        <li class="project project_frameworks project_slider project_width_m project_height_m"></li> <!-- Переименуем блок div на блок с названием li, те элемент списка ul -->
+        <li class="project project_name_slider project_width_m project_height_m"></li> <!-- Переименуем блок div на блок с названием li, те элемент списка ul -->
         <!--вам предстоит реализовать слайдер в дипломной работе;-->
-        <li class="project project_frameworks project_reactive project_width_m project_height_m"></li>
+        <li class="project project_name_reactive project_width_m project_height_m"></li>
         <!--как овладеете JavaScript'ом, вы почувствуете, что 
                         нужно выучить один из реактивных фреймворков — React, Vue.js, Angular или Svelte. Это будет несложно, если хорошо знать JS.-->
       </ul>
     </div>
-    <div class="project project_frameworks project_procrastinate project_width_l project_height_xl">
-      <!--Правому блоку задайте два класса: project и project_frameworks. Первый — project — определяет
-        универсальные правила для всех проектов. Второй — project_frameworks — для проектов, где используются
-        библиотеки JavaScript. То есть для тех четырёх, для которых мы готовим сетку сейчас.-->
+    <div class="project project_width_l project_height_xl">
+    
       <video class="project__video" src="https://code.s3.yandex.net/web-code/procrastinate.mov" autoplay muted
         loop></video>
       <!-- Для размещения видео есть тег <video>. Он похож на тег <img>, но с особенностями. 
@@ -91,17 +84,12 @@
   </section>
 
   <ul class="flex-row list"> <!--Переименуем блок div на блок с названием section, затем section заменим на ul, тк по смыслу это списки-->
-    <!--Подготовим блок для проектов, которые вам предстоит выполнять в ходе обучения.
-                        Перед закрывающим тегом body создайте элемент с классом flex-row. 
-                        Внутри него расположите три блока div с классами project и project_vanilla.-->
-    <li class="project project_vanilla project_how-to-study project_width_m project_height_m"></li> <!-- Переименуем блок div на блок с названием li, те элемент списка ul -->
-    <!--Класс project_vanilla называется так потому, что “vanilla“ — это 
-                                                сленговое название «чистого» языка программирования.
-                                              Присвойте каждому div с классом project_vanilla ещё по одному классу: первому — project_how-to-study;-->
-    <li class="project project_vanilla project_across-russia project_width_l project_height_m"></li> <!-- project_width_m--> 
-    <!-- второму к классам project и project_vanilla еще один класс - project_across-russia;-->
-    <li class="project project_vanilla project_mesto project_width_m project_height_m"></li>
-    <!--третьему — project_mesto-->
+  
+    <li class="project  project_name_how-to-study project_width_m project_height_m"></li> <!-- Переименуем блок div на блок с названием li, те элемент списка ul -->
+    <li class="project  project_name_across-russia project_width_l project_height_m"></li> <!-- project_width_m--> 
+  
+    <li class="project project_name_mesto project_width_m project_height_m"></li>
+    
   </ul>
 
   </main>

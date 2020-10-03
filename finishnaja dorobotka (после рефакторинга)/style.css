@@ -38,8 +38,7 @@
     max-width: 1330px;
     /*А сейчас вернём макет в менее адаптивный, но более привлекательный вид.*/
     min-width: 1280px;
-    margin: 60px auto;
-    /*Добавим внешние отступы сверху и снизу по 40px */
+    margin: 60px auto; /*Добавим внешние отступы сверху и снизу по 40px */
 }
 
 .content {
@@ -62,24 +61,21 @@
     /*У флекс-контейнера flex-row со свойством wrap последние элементы заворачиваются (переходят) на новую строчку, 
                     если не умещаются на текущей/если свернуть экран браузера.*/
 
-
+    
 }
 
-/*В селекторе блока flex-row намешаны стили для флекс-строки и стили для списка.
+    /*В селекторе блока flex-row намешаны стили для флекс-строки и стили для списка.
      Это не хорошо и не по БЭМ. Исправим это. Перенесем в элемент с классом "list": */
 .list {
-    list-style: none;
-    /*list-style: none - свойство, которое уберёт точки у списка*/
-    padding: 0;
-    /*делает все внутренние отступы = 0 */
-    margin: 0;
-    /*делает все внешние отступы = 0 */
+    list-style: none; /*list-style: none - свойство, которое уберёт точки у списка*/
+    padding: 0; /*делает все внутренние отступы = 0 */
+    margin: 0; /*делает все внешние отступы = 0 */
 
 }
 
 /*Уберём красные границы. Они были нужны нам, чтобы видеть, как работают флекс-свойства. Но поскольку менять эти свойства мы больше не будем, красные границы можно убирать.*/
 /*div { /* будущий флекс-контейнер, задайте ему контур. Для этого установите всем блокам div рамку в 1 пиксель, сплошную, красного цвета.*/
-/*border: 1px solid red;
+    /*border: 1px solid red;
 }*/
 
 .header__link {
@@ -105,10 +101,7 @@
 }
 
 .menu__link_active {
-    text-decoration: underline;
-    /*назначьте модификатору подчёркивание в CSS*/
-
-
+    text-decoration: underline; /*назначьте модификатору подчёркивание в CSS*/
 }
 
 .project {
@@ -118,24 +111,17 @@
     /* установите такой размер изображения, чтобы покрывало весь блок.*/
 }
 
-.project_beginner {
-    /*width: 636px; - перенес в модификатор .project_width_l*/
-    /*height: 430px; - перенос в модификатор project_height_l*/
-}
 
-.project_width_l {
-    /*Создайте модификаторы для ширины и запишите нужным карточкам в HTML.
+.project_width_l { /*Создайте модификаторы для ширины и запишите нужным карточкам в HTML.
     Модификатор блока project с ключом width и значением l (large) — карточкам с шириной 636 пикселей*/
-    width: 636px;
+width: 636px;
 }
 
-.project_width_m {
-    /*Модификатор блока project с ключом width и значением m — карточкам с шириной 306 пикселей.*/
+.project_width_m {  /*Модификатор блока project с ключом width и значением m — карточкам с шириной 306 пикселей.*/
     width: 306px;
-}
+    }
 
-.project_height_xl {
-    /*Модификатор блока project с ключом height и значением xl — карточкам с высотой 557 пикселей.*/
+.project_height_xl { /*Модификатор блока project с ключом height и значением xl — карточкам с высотой 557 пикселей.*/
     height: 557px;
 }
 
@@ -151,12 +137,12 @@
     height: 240px;
 }
 
-.project_music-album {
+.project_name_music-album {
     /* зададим фон: */
     background-image: url(https://code.s3.yandex.net/web-code/album.png);
 }
 
-.project_design-principles {
+.project_name_design-principles {
     background-image: url(https://code.s3.yandex.net/web-code/design.png);
 }
 
@@ -164,14 +150,10 @@
     /*Сделайте элемент с классом flex-column флекс-контейнером.*/
     display: flex;
     /*width: 636px; -перенес в модификатор .project_width_l**/
-    /*height: 557px; -  перенос в модификатор project_height_xl*/
+    /*height: 557px;*/
     justify-content: space-between;
 }
 
-.project_procrastinate {
-    /*width: 636px; перенес в модификатор .project_width_l*/
-    /*height: 557px; * project_height_xl*/
-}
 
 .project__video {
     width: 100%;
@@ -181,23 +163,14 @@
                          Её задают параметрами width и height. Их нужно указать явно, в нашем случае — это 100% ширины и высоты родителя.*/
 }
 
-.project_p5 {
-    /*width: 636px; - перенес в модификатор .project_width_l*/
-    /*height: 240px; -  перенос в модификатор project_height_s */
-}
 
-.flex-row_frameworks-inner {
-    /*width: 636px; - перенес в модификатор .project_width_l*/
-    /* height: 290px; - - перенос в модификатор project_height_m */
-}
-
-.project_slider {
+.project_name_slider {
     background-image: url(https://code.s3.yandex.net/web-code/slider.gif);
     /*width: 306px; - перенес в модификатор .project_width_m*/
     /*height: 290px; - перенос в модификатор project_height_m */
 }
 
-.project_reactive {
+.project_name_reactive {
     background-image: url(https://code.s3.yandex.net/web-code/reactive.gif);
     /*width: 306px; - перенес в модификатор .project_width_m*/
     /*height: 290px; - - перенос в модификатор project_height_m */
@@ -206,36 +179,31 @@
 .flex-row_reversed {
     /*для этого класса CSS-правило, которое разместит элементы в строке в противоположном направлении.*/
     flex-direction: row-reverse;
-    margin: 60px auto;
-    /*Добавим внешние отступы сверху и снизу по 60px */
+    margin: 60px auto; /*Добавим внешние отступы сверху и снизу по 60px */
 }
 
 .flex-column_reversed {
     flex-direction: column-reverse;
-}
+    }
 
-.project_vanilla {
-    /*width: 306px; - перенес в модификатор .project_width_m*/
-    /* height: 290px; - перенос в модификатор project_height_m */
-}
 
-.project_how-to-study {
+.project_name_how-to-study {
     /*Каждому классу определите свойство background-image. Всавьте ссылки на фоновые изображения для каждого блока*/
     background-image: url(https://code.s3.yandex.net/web-code/how-to-study.png);
 
-    /* Присвойте блокам с классами project_how-to-study, project_across-russia и project_mesto такие 
+    /* Присвойте блокам с классами 
         значения свойства order, чтобы первый и последний блоки поменялись местами.*/
     order: 3;
 }
 
-.project_across-russia {
+.project_name_across-russia {
     background-image: url(https://code.s3.yandex.net/web-code/across-russia.png);
     order: 2;
     /*flex-basis: 636px;
     /*ширина блока изменилась от 100 до 636px относитьно соседних двух контейнеров*/
 }
 
-.project_mesto {
+.project_name_mesto {
     background-image: url(https://code.s3.yandex.net/web-code/mesto.png);
     order: 1;
     /* свойство order меняет местами классы, сейчас последний класс на экране стал первым */
